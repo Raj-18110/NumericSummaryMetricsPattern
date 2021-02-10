@@ -1,4 +1,4 @@
-package io.dev;
+package io.dev.numericpattern;
 
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.WritableComparable;
