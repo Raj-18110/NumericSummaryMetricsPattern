@@ -19,11 +19,13 @@ public class Main extends Configured implements Tool{
         job.setJobName("SummaryMetricsData");
         job.setJarByClass(Main.class);
 
+        job.setMapOutputValueClass(SumCountWritable.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(DoubleWritable.class);
 
         job.setMapperClass(Map.class);
         job.setReducerClass(Reduce.class);
+        job.setCombinerClass(Combiner.class);
 
         Path inputFolderPath = new Path(strings[0]);
         Path outputFolderPath = new Path(strings[1]);
